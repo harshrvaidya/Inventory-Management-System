@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" prefHeight="864.0" prefWidth="1578.0" vbarPolicy="AS_NEEDED" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tcet.ivm2.controller.DashboardController">
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="900.0" minWidth="1600.0" prefHeight="904.0" prefWidth="1623.0">
+      <children>
+         <AnchorPane layoutX="26.0" layoutY="35.0" prefHeight="777.0" prefWidth="295.0" style="-fx-background-color: linear-gradient(lightblue, #d8b4f8);">
+            <children>
+               <Button fx:id="dashboardBtn" alignment="TOP_LEFT" layoutX="59.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleDashBoard" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(LIGHTBLUE,WHITE);" text="DashBoard">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="DEFAULT" />
+                  </cursor>
+                  <graphic>
+                     <FontAwesomeIconView fill="#fcfafa" glyphName="BAR_CHART" strokeMiterLimit="0.0" strokeWidth="0.0" style="-glyph-size: 20;" />
+                  </graphic>
+               </Button>
+               <Button fx:id="addMedicineBtn" alignment="TOP_LEFT" layoutX="59.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleAdminPage" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#90EE01,#00bcd4);" text="AddMedicines" textFill="#f7eeee">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="DEFAULT" />
+                  </cursor>
+                  <graphic>
+                     <FontAwesomeIconView fill="#fcfafa" glyphName="MEDKIT" strokeMiterLimit="0.0" strokeWidth="0.0" style="-glyph-size: 20;" />
+                  </graphic>
+               </Button>
+               <Button fx:id="purchaseBtn" alignment="TOP_LEFT" layoutX="59.0" layoutY="500.0" mnemonicParsing="false" onAction="#handlePurchasePage" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#90EE01,#00bcd4);" text="Purchase" textFill="WHITE">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="DEFAULT" />
+                  </cursor>
+                  <graphic>
+                     <FontAwesomeIconView fill="#fcfafa" glyphName="SHOPPING_CART" strokeMiterLimit="0.0" strokeWidth="0.0" style="-glyph-size: 20;" />
+                  </graphic>
+               </Button>
+               <Button fx:id="signOutBtn" defaultButton="true" layoutX="26.0" layoutY="618.0" mnemonicParsing="false" onAction="#handleLogout1" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: linear-gradient(to right,#90EE01,#00bcd4);" text=" SignOut" textFill="#fcf4f4">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+                  <graphic>
+                     <FontAwesomeIconView fill="#fcfafa" glyphName="SIGN_OUT" strokeMiterLimit="0.0" strokeWidth="0.0" style="-glyph-size: 20;" />
+                  </graphic>
+               </Button>
+               <AnchorPane layoutX="63.0" layoutY="14.0" prefHeight="137.0" prefWidth="158.0">
+                  <children>
+                     <FontAwesomeIconView glyphName="USER_MD" layoutX="23.0" layoutY="114.0" style="-glyph-size: 130;" wrappingWidth="74.0">
+                        <fill>
+                           <LinearGradient endX="0.42803028858069214" endY="1.0" startX="0.780303031206131" startY="0.27651519486398407">
+                              <stops>
+                                 <Stop>
+                                    <color>
+                                       <Color red="0.25575047731399536" green="0.8631578683853149" blue="0.4683430790901184" />
+                                    </color>
+                                 </Stop>
+                                 <Stop offset="1.0">
+                                    <color>
+                                       <Color red="0.257999986410141" green="0.8600000143051147" blue="0.4787333309650421" />
+                                    </color>
+                                 </Stop>
+                              </stops>
+                           </LinearGradient>
+                        </fill>
+                     </FontAwesomeIconView>
+                  </children>
+               </AnchorPane>
+            </children>
+         </AnchorPane>
+         <AnchorPane layoutX="335.0" layoutY="38.0" prefHeight="400.0" prefWidth="1158.0" style="-fx-background-color: lightgrey; -fx-border-color: black;">
+            <children>
+               <PieChart fx:id="pie" layoutX="9.600000000000001" layoutY="7.800000000000001" prefHeight="422.0" prefWidth="513.0" AnchorPane.bottomAnchor="53.80000000000001" AnchorPane.leftAnchor="9.600000000000001" AnchorPane.rightAnchor="637.5999999999998" AnchorPane.topAnchor="7.800000000000001" />
+               <LineChart fx:id="line" layoutX="538.0" prefHeight="443.0" prefWidth="576.0">
+                 <xAxis>
+                   <CategoryAxis side="BOTTOM" />
+                 </xAxis>
+                 <yAxis>
+                   <NumberAxis prefHeight="360.0" prefWidth="0.0" side="LEFT" />
+                 </yAxis>
+               </LineChart>
+            </children>
+         </AnchorPane>
+         <AnchorPane layoutX="334.0" layoutY="557.0" prefHeight="220.0" prefWidth="1158.0" style="-fx-background-color: lightgrey; -fx-border-color: black;">
+            <children>
+               <AnchorPane layoutX="44.0" layoutY="21.0" prefHeight="190.0" prefWidth="218.0" style="-fx-background-color: linear-gradient(lightblue, #d8b4f8);">
+                  <children>
+                     <FontAwesomeIconView glyphName="MEDKIT" layoutX="14.0" layoutY="108.0" style="-glyph-size: 90;" text="" />
+                     <Label fx:id="availableMedicinesLabel" layoutX="252.0" layoutY="12.0" text="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="42.0" layoutY="153.0" text="Available Medicines">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </AnchorPane>
+               <AnchorPane layoutX="413.0" layoutY="21.0" prefHeight="190.0" prefWidth="306.0" style="-fx-background-color: linear-gradient(lightblue, #d8b4f8);">
+                  <children>
+                     <Label fx:id="totalIncomeLabel" layoutX="228.0" layoutY="12.0" text="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="72.0" layoutY="153.0" text="Total Income">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <FontAwesomeIconView glyphName="MONEY" layoutX="20.0" layoutY="113.0" style="-glyph-size: 90;" text="" />
+                  </children>
+               </AnchorPane>
+            </children>
+         </AnchorPane>
+         <AnchorPane layoutX="1135.0" layoutY="577.0" prefHeight="190.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(lightblue, #d8b4f8);">
+            <children>
+               <FontAwesomeIconView glyphName="CUBES" layoutX="14.0" layoutY="104.0" style="-glyph-size: 90;" text="" />
+               <Label fx:id="totalCustomersLabel" layoutX="252.0" layoutY="12.0" text="0">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+               </Label>
+               <Label layoutX="42.0" layoutY="153.0" text="Medicine Quantity">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+               </Label>
+               <FontAwesomeIconView glyphName="MONEY" layoutX="24.0" layoutY="113.0" style="-glyph-size: 90;" text="" />
+            </children>
+         </AnchorPane>
+         <Button fx:id="report" alignment="TOP_LEFT" layoutX="1266.0" layoutY="501.0" mnemonicParsing="false" onAction="#generatePDFReport" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#90EE01,#00bcd4);" text="Report" textFill="WHITE">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView glyphName="FILE_PDF_ALT" style="-glyph-size: 20;" text="" />
+            </graphic>
+         </Button>
+      </children>
+   </AnchorPane>
+</ScrollPane>

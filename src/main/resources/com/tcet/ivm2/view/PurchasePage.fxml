@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" prefHeight="906.0" prefWidth="1578.0" vbarPolicy="AS_NEEDED" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tcet.ivm2.controller.PurchasePageController">
+   <content>
+      <Pane prefHeight="841.0" prefWidth="1629.0">
+      
+          <children>
+              <!-- Sidebar -->
+              <Pane layoutX="26.0" layoutY="35.0" prefHeight="742.0" prefWidth="295.0" style="-fx-background-color: linear-gradient(lightblue, #d8b4f8);">
+                  <children>
+                      <Button fx:id="dashboardBtn" alignment="TOP_LEFT" layoutX="59.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleDashBoard" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#90EE01,#00bcd4);" text="DashBoard" textFill="#f7f0f0">
+                          <font>
+                        <Font size="18.0" />
+                     </font>
+                          <graphic>
+                              <FontAwesomeIconView fill="#fcfafa" glyphName="BAR_CHART" style="-glyph-size: 20;" />
+                          </graphic>
+                      </Button>
+      
+                      <Button fx:id="addMedicineBtn" alignment="TOP_LEFT" layoutX="59.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleAdminPage" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#90EE01,#00bcd4);" text="AddMedicines" textFill="#f7eeee">
+                          <font>
+                        <Font size="18.0" />
+                     </font>
+                          <graphic>
+                              <FontAwesomeIconView fill="#fcfafa" glyphName="MEDKIT" style="-glyph-size: 20;" />
+                          </graphic>
+                      </Button>
+      
+                      <Button fx:id="purchaseBtn" alignment="TOP_LEFT" layoutX="59.0" layoutY="500.0" mnemonicParsing="false" onAction="#handlePurchase" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(lightblue,white);" text="Purchase">
+                          <font>
+                        <Font size="18.0" />
+                     </font>
+                          <graphic>
+                              <FontAwesomeIconView fill="#fcfafa" glyphName="SHOPPING_CART" style="-glyph-size: 20;" />
+                          </graphic>
+                      </Button>
+      
+                      <Button fx:id="signOutBtn" layoutX="26.0" layoutY="618.0" mnemonicParsing="false" onAction="#handleSignout" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: linear-gradient(to right,#90EE01,#00bcd4);" text="SignOut" textFill="#fcf4f4">
+                          <font>
+                        <Font size="18.0" />
+                     </font>
+                          <graphic>
+                              <FontAwesomeIconView fill="#fcfafa" glyphName="SIGN_OUT" style="-glyph-size: 20;" />
+                          </graphic>
+                      </Button>
+      
+                      <Pane layoutX="63.0" layoutY="14.0" prefHeight="137.0" prefWidth="158.0">
+                          <children>
+                              <FontAwesomeIconView glyphName="USER_MD" layoutX="23.0" layoutY="114.0" style="-glyph-size: 130;">
+                                  <fill>
+                                      <LinearGradient endX="0.4" endY="1.0" startX="0.7" startY="0.2">
+                                          <stops>
+                                              <Stop>
+                                       <color>
+                                          <Color red="0.25" green="0.86" blue="0.47" />
+                                       </color>
+                                    </Stop>
+                                              <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.25" green="0.86" blue="0.47" />
+                                       </color>
+                                    </Stop>
+                                          </stops>
+                                      </LinearGradient>
+                                  </fill>
+                              </FontAwesomeIconView>
+                          </children>
+                      </Pane>
+                  </children>
+              </Pane>
+      
+              <!-- Right Panel -->
+              <Pane layoutX="1154.0" layoutY="35.0" prefHeight="742.0" prefWidth="277.0" style="-fx-background-color: lightgrey;">
+                  <children>
+                      <Label layoutX="20.0" layoutY="68.0" text="Product Type:" />
+                      <Label layoutX="21.0" layoutY="101.0" text="Brand:" />
+                      <Label layoutX="21.0" layoutY="132.0" text="Product Name:" />
+                      <Label layoutX="21.0" layoutY="164.0" text="Quality:" />
+                      <Label layoutX="22.0" layoutY="275.0" text="Total:" />
+                      <Label layoutX="22.0" layoutY="308.0" text="Amount:" />
+                      <Label layoutX="22.0" layoutY="344.0" text="Balance:" />
+      
+                      <ChoiceBox fx:id="productTypeBox" layoutX="108.0" layoutY="64.0" prefWidth="150.0" />
+                      <ChoiceBox fx:id="brandBox" layoutX="107.0" layoutY="97.0" prefWidth="150.0" />
+                      <ChoiceBox fx:id="productNameBox" layoutX="107.0" layoutY="131.0" prefWidth="150.0" />
+                      <Spinner fx:id="quantitySpinner" layoutX="106.0" layoutY="167.0" />
+      
+                      <TextField fx:id="totalField" layoutX="108.0" layoutY="275.0" promptText="0.0" />
+                      <TextField fx:id="amountField" layoutX="107.0" layoutY="308.0" promptText="0.0" />
+                      <TextField fx:id="balanceField" layoutX="107.0" layoutY="340.0" promptText="0.0" />
+      
+                      <Button fx:id="addButton" layoutX="120.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right,#00bcd4,#90EE90);" text="Add" textFill="#fff5f5" />
+      
+                      <Button fx:id="payButton" layoutX="120.0" layoutY="392.0" mnemonicParsing="false" onAction="#handlePay" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right,#00bcd4,#90EE90);" text="Pay" textFill="#fff5f5" />
+                  </children>
+              </Pane>
+      
+              <!-- Table -->
+              <TableView fx:id="medicineTable" layoutX="324.0" layoutY="35.0" prefHeight="742.0" prefWidth="823.0">
+                  <columns>
+                      <TableColumn fx:id="colBrandName" prefWidth="150" text="Brand Name" />
+                      <TableColumn fx:id="colProductName" prefWidth="200" text="Product Name" />
+                      <TableColumn fx:id="colProductType" prefWidth="152.79998779296875" text="Product Type" />
+                      <TableColumn fx:id="colQuantity" prefWidth="172.0" text="Quantity" />
+                      <TableColumn fx:id="colPrice" prefWidth="197.5999755859375" text="Total Price" />
+                  </columns>
+              </TableView>
+      
+          </children>
+      </Pane>
+   </content>
+</ScrollPane>

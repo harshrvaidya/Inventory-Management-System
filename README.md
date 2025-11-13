@@ -29,4 +29,10 @@ Add Products Page – the shopkeeper/manager can perform full CRUD operations on
 Tech Stack: JavaFX, SceneBuilder, MySQL
 
 This project was developed in a short sprint through collaboration among 4 team members.
+1
 
+2 Ritik Vishwakarma 
+
+3
+
+4 Harsh Vaidya

@@ -1,6 +1,6 @@
 Inventory-Management-System
 
-===
+=== 
 
 The Inventory Management System is built using JavaFX with a MySQL database. This desktop application is designed specifically for a pharmacy shop.
 

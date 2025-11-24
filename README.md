@@ -33,6 +33,6 @@ This project was developed in a short sprint through collaboration among 4 team 
 
 2 Ritik Vishwakarma 
 
-3
+3 Yuvraj Yadav
 
 4 Harsh Vaidya
